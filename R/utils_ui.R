@@ -52,7 +52,7 @@ dash_tabs <- function(...){
 }
 
 #' @export
-dash_sidebar <- function(badge, ...){
+dash_sidebar <- function(badge,photos, ...){
   fillCol(id = "sidebar",
           tags$div(
             tags$div(
@@ -60,7 +60,8 @@ dash_sidebar <- function(badge, ...){
               tags$a(href = "javascript:void(0)",
                      id = "closebtn",'<')),
             badge,
-            widgets(...)
+            widgets(...),
+            photos
           ))
 }
 
