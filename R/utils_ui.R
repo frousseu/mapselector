@@ -96,6 +96,7 @@ badge <- function(badge = TRUE,
   # test if badge = FALSE or text is NULL
 }
   
+#' @export
 photos <- function(photos = TRUE,
                   photos = "Ce tableau de bord vise à tester les modèles de tableau de bord."){
   if (photos)  {tags$div(class = "blue-badge", photos)}
