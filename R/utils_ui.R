@@ -60,21 +60,22 @@ dash_sidebar <- function(badge,photos, ...){
               tags$a(href = "javascript:void(0)",
                      id = "closebtn",'<')),
             badge,
-            widgets(...)#,
-            #photos
+            widgets(...),
+            photos
           ))
 }
 
 #' @export
 tableau_de_bord <- function(titre = dash_title(), 
          sidebar = dash_sidebar(
-           badge(),
+           badge = badge(),
            sliderInput("obs",
                        "Nombre d'observations:",
                        min = 0,
                        max = 1000,
                        value = 500),
-           textInput("name", "What's your name?")
+           textInput("name", "What's your name?"),
+           photos = photos()
          ), 
          tabs = dash_tabs(tab_bigvis(),
                           tab_gen())){
@@ -98,7 +99,7 @@ badge <- function(badge = TRUE,
   
 #' @export
 photos <- function(photos = TRUE,
-                  text_photos = "Ce tableau de bord vise à tester les modèles de tableau de bord."){
+                  text_photos = "Ce tableau de bord"){
   if (photos)  {tags$div(class = "blue-badge", text_photos)}
   # test if badge = FALSE or text is NULL
 }
