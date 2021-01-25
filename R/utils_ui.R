@@ -60,8 +60,8 @@ dash_sidebar <- function(badge,photos, ...){
               tags$a(href = "javascript:void(0)",
                      id = "closebtn",'<')),
             badge,
-            widgets(...),
-            photos
+            widgets(...)#,
+            #photos
           ))
 }
 
