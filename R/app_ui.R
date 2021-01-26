@@ -11,7 +11,6 @@ app_ui <- function(request) {
       dash_title(title = "Analyse de raréfaction"), 
       dash_sidebar(
         badge = badge(),
-        photos = photos(),
         sliderInput("obs",
                     "Nombre d'observations:",
                     min = 0,
