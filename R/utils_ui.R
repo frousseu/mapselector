@@ -52,7 +52,7 @@ dash_tabs <- function(...){
 }
 
 #' @export
-dash_sidebar <- function(badge,photos, ...){
+dash_sidebar <- function(badge,bottom, ...){
   fillCol(id = "sidebar",
           tags$div(
             tags$div(
@@ -61,7 +61,7 @@ dash_sidebar <- function(badge,photos, ...){
                      id = "closebtn",'<')),
             badge,
             widgets(...),
-            photos
+            bottom
           ))
 }
 
@@ -74,8 +74,7 @@ tableau_de_bord <- function(titre = dash_title(),
                        min = 0,
                        max = 1000,
                        value = 500),
-           textInput("name", "What's your name?"),
-           photos = photos()
+           textInput("name", "What's your name?")
          ), 
          tabs = dash_tabs(tab_bigvis(),
                           tab_gen())){
@@ -97,9 +96,3 @@ badge <- function(badge = TRUE,
   # test if badge = FALSE or text is NULL
 }
   
-#' @export
-photos <- function(photos = TRUE,
-                  text_photos = "Ce tableau de bord"){
-  if (photos)  {tags$div(class = "blue-badge", text_photos)}
-  # test if badge = FALSE or text is NULL
-}
